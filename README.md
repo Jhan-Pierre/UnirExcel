@@ -15,45 +15,91 @@ Una aplicación web desarrollada con Streamlit que permite consolidar múltiples
 
 ## 🔧 Requisitos
 
-- Python 3.7+
-- Streamlit
-- openpyxl
+- **Python 3.7+**
+- **Streamlit**
+- **openpyxl**
+
+> ⚠️ **Importante**: Se recomienda encarecidamente usar un **entorno virtual** para evitar conflictos entre dependencias de diferentes proyectos.
 
 ## 📦 Instalación
 
-1. **Clona o descarga el proyecto**:
+### Opción 1: Instalación con Entorno Virtual (Recomendado)
+
+1. **Clona el repositorio**:
    ```bash
-   git clone [url-del-repositorio]
+   git clone https://github.com/Jhan-Pierre/Requisitoria-Detenidos.git
    cd Requisitoria-Detenidos
    ```
 
-2. **Instala las dependencias**:
+2. **Crea un entorno virtual**:
    ```bash
-   pip install streamlit openpyxl
+   # Windows
+   python -m venv venv
+   
+   # Linux/macOS
+   python3 -m venv venv
    ```
 
-   O usando un archivo `requirements.txt`:
+3. **Activa el entorno virtual**:
+   ```bash
+   # Windows
+   venv\Scripts\activate
+   
+   # Linux/macOS
+   source venv/bin/activate
+   ```
+
+4. **Instala las dependencias**:
    ```bash
    pip install -r requirements.txt
    ```
 
+### Opción 2: Instalación Global (No recomendado)
+
+1. **Clona el repositorio**:
+   ```bash
+   git clone https://github.com/Jhan-Pierre/Requisitoria-Detenidos.git
+   cd Requisitoria-Detenidos
+   ```
+
+2. **Instala las dependencias directamente**:
+   ```bash
+   pip install streamlit openpyxl
+   ```
+
 ## 🚀 Uso
 
-1. **Ejecuta la aplicación**:
+1. **Asegúrate de que el entorno virtual esté activado** (si usaste la Opción 1):
+   ```bash
+   # Windows
+   venv\Scripts\activate
+   
+   # Linux/macOS
+   source venv/bin/activate
+   ```
+
+2. **Ejecuta la aplicación**:
    ```bash
    streamlit run app.py
    ```
 
-2. **Sube tus archivos**:
+3. **Abre tu navegador**:
+   - La aplicación se abrirá automáticamente en `http://localhost:8501`
+   - Si no se abre automáticamente, copia la URL desde la terminal
+
+4. **Sube tus archivos**:
    - Selecciona uno o múltiples archivos Excel (`.xlsx` o `.xlsm`)
    - Sube tu plantilla base donde se consolidarán los datos
 
-3. **Procesa los datos**:
+5. **Procesa los datos**:
    - Haz clic en "🚀 Procesar"
    - Observa la barra de progreso mientras se procesan los archivos
 
-4. **Descarga el resultado**:
+6. **Descarga el resultado**:
    - Usa el botón "📥 Descargar Resultado" para obtener el archivo consolidado
+
+### 🛑 Para detener la aplicación:
+- Presiona `Ctrl + C` en la terminal donde se está ejecutando
 
 ## 📋 Funcionalidades Detalladas
 
@@ -78,8 +124,15 @@ Requisitoria-Detenidos/
 │
 ├── app.py              # Aplicación principal de Streamlit
 ├── README.md           # Este archivo
-└── requirements.txt    # Dependencias del proyecto (opcional)
+├── requirements.txt    # Dependencias del proyecto
+├── venv/              # Entorno virtual (creado después de la instalación)
+│   ├── Scripts/       # Ejecutables del entorno virtual (Windows)
+│   ├── bin/           # Ejecutables del entorno virtual (Linux/macOS)
+│   └── ...
+└── .gitignore         # Archivos a ignorar por Git (recomendado)
 ```
+
+> 📝 **Nota**: La carpeta `venv/` se crea automáticamente al seguir las instrucciones de instalación y no debe subirse al repositorio.
 
 ## 🔍 Ejemplo de Uso
 
@@ -99,6 +152,50 @@ Requisitoria-Detenidos/
 - Los archivos se procesan secuencialmente para evitar problemas de memoria
 - Se mantiene la integridad de las macros VBA en archivos `.xlsm`
 - El formato de fecha sigue el estándar español `dd/mm/yyyy`
+- **Entorno Virtual**: Se recomienda usar un entorno virtual para evitar conflictos de dependencias
+
+## 🔧 Requisitos del Sistema
+
+- **Python**: 3.7 o superior
+- **Sistema Operativo**: Windows, macOS, Linux
+- **Memoria RAM**: Mínimo 2GB (recomendado 4GB para archivos grandes)
+- **Espacio en disco**: 100MB para la instalación + espacio para archivos temporales
+
+## 🚨 Solución de Problemas
+
+### Error: "streamlit: command not found"
+```bash
+# Activa el entorno virtual primero
+venv\Scripts\activate  # Windows
+source venv/bin/activate  # Linux/macOS
+
+# Luego ejecuta streamlit
+streamlit run app.py
+```
+
+### Error de permisos en Windows
+```bash
+# Ejecuta PowerShell como administrador y ejecuta:
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+### La aplicación no abre en el navegador
+- Copia manualmente la URL desde la terminal (usualmente `http://localhost:8501`)
+- Verifica que el puerto 8501 no esté en uso por otra aplicación
+
+## 🤝 Contribuciones
+
+Las contribuciones son bienvenidas. Si encuentras algún error o tienes sugerencias de mejora:
+
+1. Fork el repositorio
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
 
 
 **Desarrollado para DIRNIC** - Sistema de consolidación de datos de requisitorias y detenidos
