@@ -58,8 +58,8 @@ Una aplicación web desarrollada con Streamlit que permite consolidar múltiples
 
 1. **Clona el repositorio**:
    ```bash
-   git clone https://github.com/Jhan-Pierre/Requisitoria-Detenidos.git
-   cd Requisitoria-Detenidos
+   git clone https://github.com/Jhan-Pierre/UnirExcel.git
+   cd UnirExcel
    ```
 
 2. **Instala las dependencias directamente**:
